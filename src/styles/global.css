@@ -13,12 +13,15 @@
     --color-bg-primary: #fff;
 
     /* text-colors */
-    --color-txt-primary: var(--color-gray-700);
+    --color-txt-primary: var(--color-neutral-900);
 }
 
 .dark {
     /* bg-colors */
-    --color-bg-primary: var(--color-neutral-950);
+    --color-bg-primary: var(--color-neutral-900);
+
+    /* text-colors */
+    --color-txt-primary: var(--color-neutral-100);
 }
 
 @layer base {

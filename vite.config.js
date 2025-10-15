@@ -5,7 +5,9 @@ import {resolve} from 'path';
 export default defineConfig({
     resolve: {
         alias: {
-            "@": resolve(__dirname, "src")
+            "@": resolve(__dirname, "src"),
+            "@components": resolve(__dirname, "src/components"),
+            "@layout": resolve(__dirname, "src/layout"),
         }
     },
     build: {

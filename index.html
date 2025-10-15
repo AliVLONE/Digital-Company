@@ -10,9 +10,16 @@
 
     <!-- scripts -->
     <script type="module" src="/src/main.js"></script>
+    <script>
+        document.documentElement.classList.toggle("dark",
+            localStorage.theme === "dark" || (!localStorage.theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        )
+    </script>
 </head>
 <body>
-<h1 class="text-4xl font-bold">Ass Ali</h1>
+<svg class="hidden" id="svg-defs"></svg>
+<header id="header"></header>
+<!--<h1 class="text-4xl font-bold">Ass Ali</h1>-->
 <!--<div class="bg-[#0F0F0F] h-20"></div>-->
 <!--<div class="bg-neutral-950 h-20"></div>-->
 </body>
