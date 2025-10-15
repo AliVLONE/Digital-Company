@@ -2,30 +2,38 @@
 @import "./font-face.css";
 
 @theme {
-  /* colors */
+    --font-sora: "Sora", sans-serif;
 
-  --color-black: #000;
-  --color-primary: #45289C ;
+    /* colors */
+    --color-black: #000;
 
-  /* white shades */
+    /* white shades */
+    --color-white-shade-55: #8c8c8c;
+    --color-white-shade-60: #999999;
+    --color-white-shade-65: #a6a6a6;
+    --color-white-shade-50: #808080;
+    --color-white-shade-70: #b3b3b3;
+    --color-white-shade-75: #bfbfbf;
+    --color-white-shade-80: #cccccc;
+    --color-white-shade-90: #e6e6e6;
 
-  --color-white-shade-55: #8c8c8c;
-  --color-white-shade-60: #999999;
-  --color-white-shade-65: #a6a6a6;
-  --color-white-shade-50: #808080;
-  --color-white-shade-70: #b3b3b3;
-  --color-white-shade-75: #bfbfbf;
-  --color-white-shade-80: #cccccc;
-  --color-white-shade-90: #e6e6e6;
+    /* grey shades  */
+    --color-grey-shade-06: #0f0f0f;
+    --color-grey-shade-10: #1a1a1a;
+    --color-grey-shade-12: #1f1f1f;
+    --color-grey-shade-15: #262626;
+    --color-grey-shade-20: #333333;
+    --color-grey-shade-25: #404040;
+    --color-grey-shade-30: #4c4c4c;
+    --color-grey-shade-40: #666666;
+}
 
-  /* grey shades  */
+.dark {
 
-  --color-grey-shade-06: #0f0f0f;
-  --color-grey-shade-10: #1a1a1a;
-  --color-grey-shade-12: #1f1f1f;
-  --color-grey-shade-15: #262626;
-  --color-grey-shade-20: #333333;
-  --color-grey-shade-25: #404040;
-  --color-grey-shade-30: #4c4c4c;
-  --color-grey-shade-40: #666666;
+}
+
+@layer base {
+    body {
+        @apply font-sora;
+    }
 }
