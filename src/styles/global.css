@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "./font-face.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    /* font */
+    --font-sora: "Sora", sans-serif;
+
+    /* <=== colors ===> */
+
+    /* bg-colors */
+    --color-bg-primary: #fff;
+
+    /* text-colors */
+    --color-txt-primary: var(--color-gray-700);
+}
+
+.dark {
+    /* bg-colors */
+    --color-bg-primary: var(--color-neutral-950);
+}
+
+@layer base {
+    body {
+        @apply font-sora bg-bg-primary text-txt-primary;
+    }
+}
