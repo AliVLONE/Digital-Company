@@ -1,11 +1,14 @@
 
 const bindEventsHeader = () => {
+    const navMenuBtn = document.getElementById("nav-menu-btn");
+    const themeBtn = document.getElementById("change-theme");
+    const navMenu = document.getElementById("nav-menu");
+    const overlay = document.getElementById("overlay");
+
+    // theme variables
     let theme = null;
     const localTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    const themeBtn = document.getElementById("change-theme")
-
     theme = localTheme === "dark" || (!localTheme && prefersDark) ? "dark" : "light";
 
     const changeTheme = () => {
@@ -15,11 +18,34 @@ const bindEventsHeader = () => {
         localStorage.setItem("theme", newTheme);
     }
 
+    const toggleNavMenu = () => {
+        const isOpen = navMenu.dataset.openMenu === "open";
+
+        if (!isOpen) {
+            navMenu.style.left = "0"
+            navMenu.dataset.openMenu = "open"
+            overlay.style.display = "block";
+        } else {
+            navMenu.style.left = "0"
+            navMenu.dataset.openMenu = "open"
+        }
+    }
+
+    const closeNavMenu = () => {
+        navMenu.style.left = "-240px"
+        navMenu.dataset.openMenu = "close"
+        overlay.style.display = "none";
+    }
+
+    // theme event
     themeBtn.addEventListener("click", changeTheme);
+    navMenuBtn.addEventListener("click", toggleNavMenu);
+    overlay.addEventListener("click", closeNavMenu);
 }
 
 export default function Header() {
     return `
+<div id="overlay" class="hidden z-10 fixed inset-0 w-full h-screen bg-black/70"></div>
 <nav class="container flex flex-row items-center justify-between">
     <!-- logo wrapper -->
     <a href="/" class="max-w-max">
@@ -29,7 +55,7 @@ export default function Header() {
     </a>
     
     <!-- navigation and theme wrapper -->
-    <ul class="flex max-md:mobile-nav md:flex-row md:gap-6 md:items-center">
+    <ul data-open-menu="close" id="nav-menu" class="flex max-md:mobile-nav md:flex-row md:gap-6 md:items-center">
         <li>
             <a href="">Home</a>
         </li>
@@ -55,7 +81,7 @@ export default function Header() {
     </ul>
     
     <!-- bars icon -->
-    <span class="md:hidden cursor-pointer bg-grey-10 p-3 border border-grey-12 rounded-full">
+    <span id="nav-menu-btn" class="md:hidden cursor-pointer bg-grey-10 p-3 border border-grey-12 rounded-full">
         <svg class="size-5 text-txt-primary">
             <use href="#bars-icon"></use>
         </svg>

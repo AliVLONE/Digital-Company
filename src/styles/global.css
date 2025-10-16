@@ -8,7 +8,7 @@
 }
 
 @utility mobile-nav {
-    @apply w-55 gap-4 fixed flex-col -left-56 bottom-0 top-0 bg-header-bg pl-4 pt-10;
+    @apply z-20 w-55 gap-4 fixed flex-col -left-56 h-screen top-0 bg-header-bg pl-4 pt-10 transition-all;
 }
 
 @theme {
