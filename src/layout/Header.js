@@ -55,8 +55,8 @@ export default function Header() {
     </ul>
     
     <!-- bars icon -->
-    <span class="cursor-pointer md:hidden">
-        <svg class="size-6">
+    <span class="md:hidden cursor-pointer bg-grey-10 p-3 border border-grey-12 rounded-full">
+        <svg class="size-5 text-txt-primary">
             <use href="#bars-icon"></use>
         </svg>
     </span>

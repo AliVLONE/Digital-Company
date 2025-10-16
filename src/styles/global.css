@@ -22,10 +22,13 @@
 
     /* <=== colors ===> */
 
+    /* main colors */
+    --color-grey-10: var(--color-neutral-200);
+    --color-grey-12: var(--color-neutral-300);
+
     /* bg-colors */
     --color-bg-primary: var(--color-neutral-100);
     --color-header-bg: var(--color-neutral-50);
-    --color-grey-10: var(--color-neutral-200);
 
     /* text-colors */
     --color-txt-primary: var(--color-neutral-900);
@@ -36,10 +39,13 @@
 }
 
 .dark {
+    /* main-colors */
+    --color-grey-10: var(--color-neutral-800);
+    --color-grey-12: var(--color-zinc-700);
+
     /* bg-colors */
     --color-bg-primary: var(--color-neutral-900);
     --color-header-bg: var(--color-neutral-800);
-    --color-grey-10: var(--color-neutral-800);
 
     /* text-colors */
     --color-txt-primary: var(--color-neutral-100);
@@ -55,5 +61,8 @@
     }
     a {
         @apply hover:opacity-70 transition-all;
+    }
+    header {
+        @apply fixed top-0 left-0 right-0 bg-bg-primary/20 backdrop-blur-md pt-10 pb-3.5 px-4;
     }
 }
