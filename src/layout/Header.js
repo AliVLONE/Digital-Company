@@ -1,4 +1,5 @@
-function bindEvents() {
+
+const bindEventsHeader = () => {
     let theme = null;
     const localTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -19,18 +20,47 @@ function bindEvents() {
 
 export default function Header() {
     return `
-<div>
-<span id="change-theme" class="cursor-pointer">
-    <svg class="size-8 hidden dark:inline-block">
-        <use href="#sun-icon"></use>
-    </svg>
-    <svg class="size-8 dark:hidden">
-        <use href="#moon-icon"></use>
-    </svg>
-</span>
+<nav class="container flex flex-row items-center justify-between">
+    <!-- logo wrapper -->
+    <a href="/" class="max-w-max">
+        <svg class="size-10">
+            <use href="#logo-icon"></use>
+        </svg>
+    </a>
     
-    <h1 class="">Header</h1>
-</div>`
+    <!-- navigation and theme wrapper -->
+    <ul class="flex max-md:mobile-nav md:flex-row md:gap-6 md:items-center">
+        <li>
+            <a href="">Home</a>
+        </li>
+        <li>
+            <a href="">Services</a>
+        </li>
+        <li>
+            <a href="">Projects</a>
+        </li>
+        <li>
+            <a href="">About Us</a>
+        </li>
+        <li>
+            <span id="change-theme" class="cursor-pointer">
+                <svg class="size-6 hidden dark:inline-block">
+                    <use href="#sun-icon"></use>
+                </svg>
+                <svg class="size-6 dark:hidden">
+                    <use href="#moon-icon"></use>
+                </svg>
+            </span>
+        </li>
+    </ul>
+    
+    <!-- bars icon -->
+    <span class="cursor-pointer md:hidden">
+        <svg class="size-6">
+            <use href="#bars-icon"></use>
+        </svg>
+    </span>
+</nav>`
 };
 
-export {bindEvents}
+export {bindEventsHeader};

@@ -8,6 +8,7 @@ export default defineConfig({
             "@": resolve(__dirname, "src"),
             "@components": resolve(__dirname, "src/components"),
             "@layout": resolve(__dirname, "src/layout"),
+            "@img": resolve(__dirname, "src/assets/img"),
         }
     },
     build: {
