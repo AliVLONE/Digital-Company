@@ -8,11 +8,14 @@ const bindEventsHeader = () => {
     const links = document.querySelectorAll("#nav-menu a");
     const pathname = window.location.pathname;
 
-    // theme variables
-    let theme = null;
-    const localTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    theme = (localTheme === "dark" && "dark") || ((!localTheme && prefersDark) ? "dark" : "light");
+    // theme login and variables
+    const resolveTheme = () => {
+        const local = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        return local === "dark" || (!local && prefersDark) ? "dark" : "light";
+    };
+
+    let theme = resolveTheme();
 
     // change theme handler
     const changeTheme = () => {
