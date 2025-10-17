@@ -3,24 +3,16 @@ const bindEventsHeader = () => {
     const themeBtn = document.getElementById("change-theme");
     const navMenu = document.getElementById("nav-menu");
     const overlay = document.getElementById("overlay");
-    const getAllMenuLinks = document.querySelectorAll("#nav-menu a");
 
+    // links and pathname for active classes in nav menu
+    const links = document.querySelectorAll("#nav-menu a");
     const pathname = window.location.pathname;
-
-    // active links ui
-    for (let link of getAllMenuLinks) {
-        if (link.getAttribute("href") === pathname) {
-            link.classList.add("text-violet-500")
-        } else {
-            link.classList.remove("text-violet-500")
-        }
-    }
 
     // theme variables
     let theme = null;
     const localTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    theme = localTheme === "dark" || (!localTheme && prefersDark) ? "dark" : "light";
+    theme = (localTheme === "dark" && "dark") || ((!localTheme && prefersDark) ? "dark" : "light");
 
     // change theme handler
     const changeTheme = () => {
@@ -30,6 +22,9 @@ const bindEventsHeader = () => {
         localStorage.setItem("theme", newTheme);
     }
 
+    // add and remove active classes
+    for (const link of links) link.classList.toggle("text-violet-500", link.getAttribute("href") === pathname);
+
     // open menu in mobile size
     const openNavMenu = () => {
         const isOpen = navMenu.dataset.openMenu === "open";
@@ -37,10 +32,7 @@ const bindEventsHeader = () => {
         if (!isOpen) {
             navMenu.style.left = "0"
             navMenu.dataset.openMenu = "open"
-            overlay.style.display = "block";
-        } else {
-            navMenu.style.left = "0"
-            navMenu.dataset.openMenu = "open"
+            overlay.classList.toggle("hidden");
         }
     }
 
@@ -48,12 +40,19 @@ const bindEventsHeader = () => {
     const closeNavMenu = () => {
         navMenu.style.left = "-240px"
         navMenu.dataset.openMenu = "close"
-        overlay.style.display = "none";
+        overlay.classList.toggle("hidden");
+    }
+
+    const activeLinks = event => {
+        if (event.target.tagName.toLowerCase() === "a") {
+            console.log(event.target.getAttribute("href"));
+        }
     }
 
     themeBtn.addEventListener("click", changeTheme); // change theme event
     navMenuBtn.addEventListener("click", openNavMenu); // open nav menu
     overlay.addEventListener("click", closeNavMenu); // close nav menu
+    navMenu.addEventListener("click", activeLinks); // active link classes
 }
 
 export default function Header() {
@@ -81,7 +80,9 @@ export default function Header() {
         <li>
             <a href="/about-us">About Us</a>
         </li>
-        <li class="max-w-max bg-grey-10 p-1 border border-grey-12 rounded-full">
+        
+        <!-- theme button -->
+        <li class="max-w-max bg-grey-10 p-1.5 border border-grey-12 rounded-full">
             <span id="change-theme" class="cursor-pointer">
                 <svg class="size-6 hidden dark:inline-block">
                     <use href="#sun-icon"></use>
