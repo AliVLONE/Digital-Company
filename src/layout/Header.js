@@ -3,6 +3,18 @@ const bindEventsHeader = () => {
     const themeBtn = document.getElementById("change-theme");
     const navMenu = document.getElementById("nav-menu");
     const overlay = document.getElementById("overlay");
+    const getAllMenuLinks = document.querySelectorAll("#nav-menu a");
+
+    const pathname = window.location.pathname;
+
+    // active links ui
+    for (let link of getAllMenuLinks) {
+        if (link.getAttribute("href") === pathname) {
+            link.classList.add("text-violet-500")
+        } else {
+            link.classList.remove("text-violet-500")
+        }
+    }
 
     // theme variables
     let theme = null;
