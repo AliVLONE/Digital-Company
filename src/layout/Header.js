@@ -28,37 +28,19 @@ const bindEventsHeader = () => {
     // add and remove active classes
     for (const link of links) link.classList.toggle("text-violet-500", link.getAttribute("href") === pathname);
 
-    // open menu in mobile size
-    const openNavMenu = () => {
-        const isOpen = navMenu.dataset.openMenu === "open";
-
-        if (!isOpen) {
-            navMenu.style.left = "0"
-            navMenu.dataset.openMenu = "open"
-            overlay.classList.toggle("hidden");
-        }
-    }
-
-    // close nav menu btn in mobile size
-    const closeNavMenu = () => {
-        navMenu.style.left = "-240px"
-        navMenu.dataset.openMenu = "close"
+    // toggle menu in mobile size
+    const toggleNavMenu = (flag) => {
+        navMenu.style.left = flag ? "0" : "-240px"
+        navMenu.dataset.openMenu = flag ? "open" : "close"
         overlay.classList.toggle("hidden");
     }
 
-    const activeLinks = event => {
-        if (event.target.tagName.toLowerCase() === "a") {
-            console.log(event.target.getAttribute("href"));
-        }
-    }
-
     themeBtn.addEventListener("click", changeTheme); // change theme event
-    navMenuBtn.addEventListener("click", openNavMenu); // open nav menu
-    overlay.addEventListener("click", closeNavMenu); // close nav menu
-    navMenu.addEventListener("click", activeLinks); // active link classes
+    navMenuBtn.addEventListener("click", toggleNavMenu.bind(null, true)); // open nav menu
+    overlay.addEventListener("click", toggleNavMenu.bind(null, false)); // close nav menu
 }
 
-export default function Header() {
+function Header() {
     return `
 <div id="overlay" class="hidden z-10 fixed inset-0 w-full h-screen bg-black/70"></div>
 <nav class="container flex flex-row items-center justify-between">
@@ -104,6 +86,7 @@ export default function Header() {
         </svg>
     </span>
 </nav>`
-};
+}
 
+export default Header;
 export {bindEventsHeader};
