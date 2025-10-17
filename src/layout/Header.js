@@ -48,7 +48,7 @@ export default function Header() {
 <div id="overlay" class="hidden z-10 fixed inset-0 w-full h-screen bg-black/70"></div>
 <nav class="container flex flex-row items-center justify-between">
     <!-- logo wrapper -->
-    <a href="/" class="max-w-max">
+    <a href="/" class="max-w-max hover:opacity-100">
         <svg class="size-10">
             <use href="#logo-icon"></use>
         </svg>
