@@ -63,6 +63,6 @@
         @apply hover:opacity-70 transition-all;
     }
     header {
-        @apply fixed top-0 left-0 right-0 bg-bg-primary/20 backdrop-blur-md pt-10 pb-3.5;
+        @apply fixed top-0 left-0 right-0 bg-bg-primary/20 backdrop-blur-xs pt-10 pb-3.5;
     }
 }

@@ -1,5 +1,5 @@
 // Header icons
-function HeaderIcons() {
+const HeaderIcons = () => {
     return `
 <!-- logo -->
 <symbol id="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 55" fill="none">
@@ -21,6 +21,15 @@ function HeaderIcons() {
 `
 }
 
+const HomeIcons = () => {
+    return `
+
+`
+}
+
 export default function SvgDefs() {
-    return (HeaderIcons())
+    const headerIcon = HeaderIcons()
+    const homeIcons = HomeIcons()
+
+    return headerIcon + homeIcons
 }

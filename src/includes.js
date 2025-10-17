@@ -3,7 +3,9 @@ import Header, {bindEventsHeader} from "@layout/Header.js";
 import SvgDefs from "@components/ui/SvgDefs.js";
 
 window.addEventListener("DOMContentLoaded", () => {
+    // create svg tag in body
     document.body.insertAdjacentHTML("afterbegin", `<svg class="hidden" id="svg-defs"></svg>`)
+
     // include header
     document.getElementById("header").innerHTML = Header();
     bindEventsHeader();

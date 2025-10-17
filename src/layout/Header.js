@@ -95,7 +95,7 @@ export default function Header() {
     
     <!-- bars icon -->
     <span id="nav-menu-btn" class="md:hidden cursor-pointer bg-grey-10 p-3 border border-grey-12 rounded-full">
-        <svg class="size-5 text-txt-primary">
+        <svg class="size-5.5 text-txt-primary">
             <use href="#bars-icon"></use>
         </svg>
     </span>
