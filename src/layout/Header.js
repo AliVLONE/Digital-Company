@@ -1,4 +1,3 @@
-
 const bindEventsHeader = () => {
     const navMenuBtn = document.getElementById("nav-menu-btn");
     const themeBtn = document.getElementById("change-theme");
@@ -11,6 +10,7 @@ const bindEventsHeader = () => {
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     theme = localTheme === "dark" || (!localTheme && prefersDark) ? "dark" : "light";
 
+    // change theme handler
     const changeTheme = () => {
         const newTheme = theme === "dark" ? "light" : "dark";
         theme = newTheme;
@@ -18,7 +18,8 @@ const bindEventsHeader = () => {
         localStorage.setItem("theme", newTheme);
     }
 
-    const toggleNavMenu = () => {
+    // open menu in mobile size
+    const openNavMenu = () => {
         const isOpen = navMenu.dataset.openMenu === "open";
 
         if (!isOpen) {
@@ -31,16 +32,16 @@ const bindEventsHeader = () => {
         }
     }
 
+    // close nav menu btn in mobile size
     const closeNavMenu = () => {
         navMenu.style.left = "-240px"
         navMenu.dataset.openMenu = "close"
         overlay.style.display = "none";
     }
 
-    // theme event
-    themeBtn.addEventListener("click", changeTheme);
-    navMenuBtn.addEventListener("click", toggleNavMenu);
-    overlay.addEventListener("click", closeNavMenu);
+    themeBtn.addEventListener("click", changeTheme); // change theme event
+    navMenuBtn.addEventListener("click", openNavMenu); // open nav menu
+    overlay.addEventListener("click", closeNavMenu); // close nav menu
 }
 
 export default function Header() {
@@ -57,16 +58,16 @@ export default function Header() {
     <!-- navigation and theme wrapper -->
     <ul data-open-menu="close" id="nav-menu" class="flex max-md:mobile-nav md:flex-row md:gap-6 md:items-center">
         <li>
-            <a href="">Home</a>
+            <a href="/">Home</a>
         </li>
         <li>
-            <a href="">Services</a>
+            <a href="/services">Services</a>
         </li>
         <li>
-            <a href="">Projects</a>
+            <a href="/projects">Projects</a>
         </li>
         <li>
-            <a href="">About Us</a>
+            <a href="/about-us">About Us</a>
         </li>
         <li class="max-w-max bg-grey-10 p-1 border border-grey-12 rounded-full">
             <span id="change-theme" class="cursor-pointer">
