@@ -4,7 +4,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @utility container {
-    @apply mx-auto px-4;
+    @apply mx-auto;
 }
 
 @utility mobile-nav {
@@ -18,7 +18,7 @@
     /* <=== break-points ===> */
     --breakpoint-xs: 24.375rem;
     --breakpoint-sm: 36rem;
-    --breakpoint-2xl: 101.75rem;
+    --breakpoint-2xl: 99.75rem;
 
     /* <=== colors ===> */
 
@@ -63,6 +63,6 @@
         @apply hover:opacity-70 transition-all;
     }
     header {
-        @apply fixed top-0 left-0 right-0 bg-bg-primary/20 backdrop-blur-xs pt-10 pb-3.5;
+        @apply fixed top-0 left-0 right-0 bg-bg-primary/20 backdrop-blur-xs px-4 pt-10 pb-3.5;
     }
 }
