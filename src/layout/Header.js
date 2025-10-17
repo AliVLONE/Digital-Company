@@ -68,7 +68,7 @@ export default function Header() {
         <li>
             <a href="">About Us</a>
         </li>
-        <li class="bg-grey-10 p-1 border border-grey-12 rounded-full">
+        <li class="max-w-max bg-grey-10 p-1 border border-grey-12 rounded-full">
             <span id="change-theme" class="cursor-pointer">
                 <svg class="size-6 hidden dark:inline-block">
                     <use href="#sun-icon"></use>
