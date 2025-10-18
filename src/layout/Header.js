@@ -35,6 +35,7 @@ const bindEventsHeader = () => {
         overlay.classList.toggle("hidden");
     }
 
+    // events
     themeBtn.addEventListener("click", changeTheme); // change theme event
     navMenuBtn.addEventListener("click", toggleNavMenu.bind(null, true)); // open nav menu
     overlay.addEventListener("click", toggleNavMenu.bind(null, false)); // close nav menu
