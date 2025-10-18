@@ -20,12 +20,12 @@
 <header id="header"></header>
 
 <main id="main">
-    <section id="hero-section" class="flex flex-col-reverse items-center gap-18">
+    <section id="hero-section" class="flex flex-col-reverse items-center lg:flex-row lg:container">
         <!-- left hero-section -->
-        <div class="relative overflow-hidden w-full px-4 pb-9">
-            <img class="opacity-5 right-0 left-0 absolute -z-10" src="/src/assets/img/home/Vector.webp" alt="vector hero section">
+        <div id="left-hero" class="relative overflow-hidden w-full px-4 pb-9 lg:basis-1/2">
+            <img class="opacity-5 right-0 left-0 absolute -z-10 lg:bottom-0 lg:hidden" src="/src/assets/img/home/Vector.webp" alt="vector hero section">
 
-            <div class="container space-y-12">
+            <div class="container space-y-12 pt-18">
                 <!-- left hero-section title -->
                 <div class="space-y-3">
                     <h1 class="text-center">
@@ -54,8 +54,8 @@
         </div>
 
         <!-- right hero-section -->
-        <div class="px-4">
-            <div class="mx-auto max-w-[60%] 2xl:max-119 3xl:max-w-150">
+        <div class="px-4 lg:basis-1/2">
+            <div class="mx-auto max-w-[60%] sm:max-w-80 2xl:max-119 3xl:max-w-150">
                 <img class="w-full" src="/src/assets/img/home/Image.webp" alt="hero section image Logo">
             </div>
         </div>

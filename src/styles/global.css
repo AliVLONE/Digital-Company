@@ -77,7 +77,7 @@
     }
 
     h1 {
-        @apply font-medium text-3xl/[130%] md:text-4xl 2xl:text-5xl 3xl:text-[58px];
+        @apply font-medium leading-[130%] text-3xl md:text-4xl 2xl:text-5xl 3xl:text-[58px];
     }
 }
 
@@ -85,8 +85,7 @@
     .sub-text {
         @apply text-grey-50 text-sm;
     }
-    .primary-btn,
-    .secondary-btn {
+    .primary-btn, .secondary-btn {
         @apply rounded-full px-4 py-2.5 text-sm;
     }
     .primary-btn {
@@ -95,5 +94,11 @@
     .secondary-btn {
         @apply bg-black/70 dark:bg-grey-10 text-white border
         border-black/5 dark:border-zinc-700;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #left-hero {
+        overflow: unset !important;
     }
 }
