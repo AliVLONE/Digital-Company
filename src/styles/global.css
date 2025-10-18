@@ -8,7 +8,7 @@
 }
 
 @utility mobile-nav {
-    @apply z-20 w-55 gap-4 fixed flex-col -left-56 h-screen top-0 bg-header-bg pl-4 pt-10 transition-all;
+    @apply w-55 gap-4 fixed flex-col -left-56 h-screen top-0 bg-header-bg pl-4 pt-10 transition-all;
 }
 
 @theme {
@@ -27,6 +27,7 @@
     --color-grey-12: var(--color-neutral-300);
     --color-grey-40: var(--color-neutral-300);
     --color-grey-50: var(--color-neutral-300);
+    --color-grey-15: #262626;
 
     /* bg-colors */
     --color-bg-primary: var(--color-neutral-100);
@@ -44,12 +45,13 @@
     /* main-colors */
     --color-grey-10: var(--color-neutral-800);
     --color-grey-12: var(--color-zinc-700);
+    --color-grey-40: #666666;
+    --color-grey-50: #808080;
+    --color-grey-15: #262626;
 
     /* bg-colors */
     --color-bg-primary: var(--color-neutral-900);
     --color-header-bg: var(--color-neutral-800);
-    --color-grey-40: var(--color-neutral-300);
-    --color-grey-50: var(--color-neutral-300);
 
     /* text-colors */
     --color-txt-primary: var(--color-neutral-100);
@@ -69,7 +71,7 @@
     }
 
     header {
-        @apply fixed top-0 left-0 right-0 border-b border-b-grey-12 bg-bg-primary/20 backdrop-blur-xs px-4 pt-10 pb-3.5 md:py-5 2xl:px-6;
+        @apply z-10 fixed top-0 left-0 right-0 border-b border-b-grey-12 bg-bg-primary/20 backdrop-blur-xs px-4 pt-10 pb-3.5 md:py-5 2xl:px-6;
     }
 
     main {
@@ -77,6 +79,22 @@
     }
 
     h1 {
-        @apply font-medium text-3xl md:text-4xl 2xl:text-5xl 3xl:text-[58px];
+        @apply font-medium text-3xl/[130%] md:text-4xl 2xl:text-5xl 3xl:text-[58px];
+    }
+}
+
+@layer components {
+    .sub-text {
+        @apply text-grey-50 text-sm;
+    }
+    .primary-btn,
+    .secondary-btn {
+        @apply rounded-full px-4 py-2.5 text-sm;
+    }
+    .primary-btn {
+        @apply text-bg-primary bg-txt-primary;
+    }
+    .secondary-btn {
+        @apply bg-black/70 dark:bg-grey-10 text-white border border-grey-15;
     }
 }

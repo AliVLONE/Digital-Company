@@ -43,7 +43,7 @@ const bindEventsHeader = () => {
 
 function Header() {
     return `
-<div id="overlay" class="hidden z-10 fixed inset-0 w-full h-screen bg-black/70"></div>
+<div id="overlay" class="hidden z-20 fixed inset-0 w-full h-screen bg-black/70"></div>
 <nav class="container flex flex-row items-center justify-between">
     <!-- logo wrapper -->
     <a href="/" class="max-w-max hover:opacity-100">
@@ -53,7 +53,7 @@ function Header() {
     </a>
     
     <!-- navigation and theme wrapper -->
-    <ul data-open-menu="close" id="nav-menu" class="flex max-md:mobile-nav md:flex-row md:gap-6 md:items-center">
+    <ul data-open-menu="close" id="nav-menu" class="z-30 flex max-md:mobile-nav md:flex-row md:gap-6 md:items-center">
         <li>
             <a href="/">Home</a>
         </li>
