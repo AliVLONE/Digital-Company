@@ -18,13 +18,15 @@
     /* <=== break-points ===> */
     --breakpoint-xs: 24.375rem;
     --breakpoint-sm: 36rem;
-    --breakpoint-2xl: 99.75rem;
+    --breakpoint-2xl: 90rem;
+    --breakpoint-3xl: 99.75rem;
 
     /* <=== colors ===> */
-
     /* main colors */
     --color-grey-10: var(--color-neutral-200);
     --color-grey-12: var(--color-neutral-300);
+    --color-grey-40: var(--color-neutral-300);
+    --color-grey-50: var(--color-neutral-300);
 
     /* bg-colors */
     --color-bg-primary: var(--color-neutral-100);
@@ -46,6 +48,8 @@
     /* bg-colors */
     --color-bg-primary: var(--color-neutral-900);
     --color-header-bg: var(--color-neutral-800);
+    --color-grey-40: var(--color-neutral-300);
+    --color-grey-50: var(--color-neutral-300);
 
     /* text-colors */
     --color-txt-primary: var(--color-neutral-100);
@@ -59,10 +63,20 @@
     body {
         @apply font-normal font-sora bg-bg-primary text-txt-primary;
     }
+
     a {
         @apply hover:opacity-70 transition-all;
     }
+
     header {
-        @apply fixed top-0 left-0 right-0 bg-bg-primary/20 backdrop-blur-xs px-4 pt-10 pb-3.5;
+        @apply fixed top-0 left-0 right-0 border-b border-b-grey-12 bg-bg-primary/20 backdrop-blur-xs px-4 pt-10 pb-3.5 md:py-5 2xl:px-6;
+    }
+
+    main {
+        @apply pt-34;
+    }
+
+    h1 {
+        @apply font-medium text-3xl md:text-4xl 2xl:text-5xl 3xl:text-[58px];
     }
 }
