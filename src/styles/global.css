@@ -25,9 +25,8 @@
     /* main colors */
     --color-grey-10: var(--color-neutral-200);
     --color-grey-12: var(--color-neutral-300);
-    --color-grey-40: var(--color-neutral-300);
-    --color-grey-50: var(--color-neutral-300);
-    --color-grey-15: #262626;
+    --color-grey-40: var(--color-neutral-600);
+    --color-grey-50: var(--color-neutral-500);
 
     /* bg-colors */
     --color-bg-primary: var(--color-neutral-100);
@@ -47,7 +46,6 @@
     --color-grey-12: var(--color-zinc-700);
     --color-grey-40: #666666;
     --color-grey-50: #808080;
-    --color-grey-15: #262626;
 
     /* bg-colors */
     --color-bg-primary: var(--color-neutral-900);
@@ -95,6 +93,7 @@
         @apply text-bg-primary bg-txt-primary;
     }
     .secondary-btn {
-        @apply bg-black/70 dark:bg-grey-10 text-white border border-grey-15;
+        @apply bg-black/70 dark:bg-grey-10 text-white border
+        border-black/5 dark:border-zinc-700;
     }
 }
