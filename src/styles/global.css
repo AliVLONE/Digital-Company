@@ -83,7 +83,7 @@
 
 @layer components {
     .sub-text {
-        @apply text-grey-50 text-sm;
+        @apply text-grey-50 text-sm md:text-base 3xl:text-lg;
     }
     .primary-btn, .secondary-btn {
         @apply rounded-full px-4 py-2.5 text-sm;
