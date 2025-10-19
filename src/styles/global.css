@@ -77,9 +77,14 @@
     main {
         @apply pt-34;
     }
-
+    h1, h2, h3 {
+        @apply font-medium;
+    }
     h1 {
-        @apply font-medium leading-[130%] text-3xl md:text-4xl 2xl:text-5xl 3xl:text-[58px];
+        @apply leading-[130%] text-3xl md:text-4xl 2xl:text-5xl 3xl:text-[58px];
+    }
+    h2 {
+        @apply leading-[150%] text-2xl md:text-3xl 2xl:text-4xl;
     }
 }
 
