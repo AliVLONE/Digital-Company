@@ -1,6 +1,6 @@
 export default function WhyUsReason({icon, title, text}) {
     return `
-<div class="space-y-5 text-center *:mx-auto">
+<div class="space-y-7 text-center px-4 *:mx-auto">
     <!-- icon wrapper -->
     <div class="max-w-max relative rounded-full border-4 border-grey-30 overflow-hidden">
         <img class="absolute -z-10 inset-0 min-w-70 h-65 opacity-8"
@@ -14,7 +14,7 @@ export default function WhyUsReason({icon, title, text}) {
     </div>
     
     <!-- info wrapper -->
-    <div>
+    <div class="space-y-2.5">
         <h3>${title}</h3>
         <p class="sub-text">${text}</p>
     </div>
