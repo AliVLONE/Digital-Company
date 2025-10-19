@@ -6,7 +6,7 @@ export default function WhyUsReason({icon, title, text}) {
         <img class="absolute -z-10 inset-0 min-w-70 h-65 opacity-8"
          src="/src/assets/img/home/Vector.webp" alt="vector">
          
-         <div class="bg-white/5 size-full p-3.5">
+         <div class="bg-black/20 dark:bg-white/5 size-full p-3.5">
             <svg class="size-6">
                 <use href="#${icon}-icon"></use>
             </svg>
@@ -20,7 +20,7 @@ export default function WhyUsReason({icon, title, text}) {
     </div>
     
     <!-- link wrapper -->
-    <div class="max-w-max border border-grey-12 rounded-full pl-4 py-2.5 pr-2.5 text-sm flex flex-row justify-between items-center gap-5">
+    <div class="max-w-max bg-black/20 dark:bg-transparent border border-grey-12 rounded-full pl-4 py-2.5 pr-2.5 text-sm flex flex-row justify-between items-center gap-5">
         Learn More
         <div class="max-w-max bg-grey-10 rounded-full px-3.5 py-1.5">
             <svg class="size-4">
