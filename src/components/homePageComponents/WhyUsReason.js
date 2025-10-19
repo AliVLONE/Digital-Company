@@ -1,6 +1,6 @@
 export default function WhyUsReason({icon, title, text}) {
     return `
-<div class="space-y-5">
+<div class="space-y-5 text-center *:mx-auto">
     <!-- icon wrapper -->
     <div class="max-w-max relative rounded-full border-4 border-grey-30 overflow-hidden">
         <img class="absolute -z-10 inset-0 min-w-70 h-65 opacity-8"
@@ -20,7 +20,7 @@ export default function WhyUsReason({icon, title, text}) {
     </div>
     
     <!-- link wrapper -->
-    <div class="border border-grey-12 rounded-full pl-4 py-2.5 pr-2.5 text-base">
+    <div class="max-w-max border border-grey-12 rounded-full pl-4 py-2.5 pr-2.5 text-sm flex flex-row justify-between items-center gap-5">
         Learn More
         <div class="max-w-max bg-grey-10 rounded-full px-3.5 py-1.5">
             <svg class="size-4">

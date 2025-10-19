@@ -63,17 +63,14 @@
 
 @layer base {
     body {
-        @apply font-normal font-sora bg-bg-primary text-txt-primary;
+        @apply font-normal font-sora bg-bg-primary text-txt-primary mb-20;
     }
-
     a {
         @apply hover:opacity-70 transition-all;
     }
-
     header {
         @apply z-10 fixed top-0 left-0 right-0 border-b border-b-grey-12 bg-bg-primary/20 backdrop-blur-xs px-4 pt-10 pb-3.5 md:py-5 2xl:px-6;
     }
-
     main {
         @apply pt-34;
     }
