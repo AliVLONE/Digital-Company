@@ -1,4 +1,4 @@
-import WhyUsReason from "@/pages/home/components/WhyUsReason.js"
+import WhyUsReason from "./components/WhyUsReason.js"
 
 // why us reason data
 const whyUsReasonData = [

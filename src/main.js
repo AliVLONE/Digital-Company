@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const dataPage = document.body.dataset.page;
 
     if (dataPage) {
-        import(`@/pages/${dataPage}.js`)
+        import(`@/pages/${dataPage}/${dataPage}.js`)
             .then(mod => {
                 if (mod) mod.init()
             })
