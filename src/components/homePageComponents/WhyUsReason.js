@@ -1,13 +1,13 @@
-export default function WhyUsReason({icon, title, text}) {
+export default function WhyUsReason({icon, title, text, className}) {
     return `
-<div class="space-y-7 text-center px-4 *:mx-auto">
+<div class="space-y-7 text-center px-4 *:mx-auto ${className ? className : ""}">
     <!-- icon wrapper -->
-    <div class="max-w-max relative rounded-full border-4 border-grey-30 overflow-hidden">
+    <div class="max-w-max relative rounded-full border-4 border-violet-500 dark:border-grey-30 overflow-hidden">
         <img class="absolute -z-10 inset-0 min-w-70 h-65 opacity-8"
          src="/src/assets/img/home/Vector.webp" alt="vector">
          
          <div class="bg-black/20 dark:bg-white/5 size-full p-3.5">
-            <svg class="size-6">
+            <svg class="size-6 text-violet-500">
                 <use href="#${icon}-icon"></use>
             </svg>
         </div>
@@ -15,8 +15,8 @@ export default function WhyUsReason({icon, title, text}) {
     
     <!-- info wrapper -->
     <div class="space-y-2.5">
-        <h3>${title}</h3>
-        <p class="sub-text">${text}</p>
+        <h3 class="min-h-12 2xl:text-lg 2xl:min-h-auto">${title}</h3>
+        <p class="sub-text lg:text-base min-h-20 2xl:min-h-[70px] 3xl:min-h-auto">${text}</p>
     </div>
     
     <!-- link wrapper -->
