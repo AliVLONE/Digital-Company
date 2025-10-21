@@ -1,4 +1,5 @@
 import WhyUsReason from "./components/WhyUsReason.js"
+import ServiceBox from "./components/ServiceBox.js"
 
 // why us reason data
 const whyUsReasonData = [
@@ -9,15 +10,31 @@ const whyUsReasonData = [
     {icon: "lamp", title: "Marketing Strategies", text: "Our data-driven marketing strategies allow us to target the right audience with precision", className: "hidden sm:block"},
     {icon: "phone", title: "Search Engine Optimization", text: "(SEO) Mastery Boost your online visibility with our expert SEO techniques.", className: "hidden sm:block"}
 ]
+// services box data
+const servicesBoxData = [
+    {icon: "clickEffect", title: "Web Development", description: "Unlock Your Online Potential In today's digital age, a powerful web presence is essential for any business."},
+    {icon: "clickEffect", title: "Web Development", description: "Unlock Your Online Potential In today's digital age, a powerful web presence is essential for any business."},
+    {icon: "clickEffect", title: "Web Development", description: "Unlock Your Online Potential In today's digital age, a powerful web presence is essential for any business."},
+    {icon: "clickEffect", title: "Web Development", description: "Unlock Your Online Potential In today's digital age, a powerful web presence is essential for any business."},
+]
 
 export const init = () => {
+    // home page variables
     const whyUsReasonElem = document.getElementById("why-us-reason");
+    const servicesBoxElem = document.getElementById("services-box");
 
-    const wrapper = whyUsReasonData.map(data => {
+    const whyUsReasonWrapper = whyUsReasonData.map(data => {
         return (
             WhyUsReason({...data})
         )
     })
 
-    whyUsReasonElem.insertAdjacentHTML("beforeend", wrapper.join(""));
+    const servicesBoxWrapper = servicesBoxData.map(data => {
+        return (
+            ServiceBox({...data})
+        )
+    })
+
+    whyUsReasonElem.insertAdjacentHTML("beforeend", whyUsReasonWrapper.join(""));
+    servicesBoxElem.insertAdjacentHTML("beforeend", servicesBoxWrapper.join(""));
 }
