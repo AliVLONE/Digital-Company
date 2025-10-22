@@ -1,7 +1,7 @@
 export default function ServiceBox({icon, title, description}) {
     return `
-<div class="relative space-y-6 text-center px-6 pt-12 pb-6 border border-grey-50 rounded-5 rounded-2xl overflow-hidden">
-    <img class="-z-10 absolute inset-0 size-full opacity-20" src="/src/assets/img/home/Vector.webp" alt="vector">
+<div class="relative space-y-5 text-center px-6 pt-12 pb-6 border border-grey-50/20 rounded-5 rounded-2xl overflow-hidden">
+    <img class="-z-10 absolute inset-0 -top-20 rotate-45 size-full opacity-10" src="/src/assets/img/home/Vector.webp" alt="vector">
 
     <div class="relative"> 
         <!-- icon and cricle borders -->
