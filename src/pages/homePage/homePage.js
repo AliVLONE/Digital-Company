@@ -1,5 +1,6 @@
 import WhyUsReason from "./components/WhyUsReason";
 import ServiceBox from "./components/ServiceBox";
+import OurWorksBox from "./components/OurWorksBox.js"
 
 // why us reason data
 const whyUsReasonData = [
@@ -19,10 +20,19 @@ const servicesBoxData = [
     {icon: "thunder", title: "Digital Marketing", description: "Drive Your Business Forward In the vast digital landscape, standing out from the competition is crucial."},
 ];
 
+// works box data
+const worksBoxData = [
+    {icon: "code", title: "Web Development", description: "Unlock Your Online Potential In today's digital age, a powerful web presence is essential for any business.", date: "may 2022", category: "web"},
+    {icon: "phone", title: "Mobile App Development", description: "Embrace Mobility with Confidence Mobile devices have revolutionized the way we interact with the world.", date: "may 2022", category: "web"},
+    {icon: "clickEffect", title: "Web Design", description: "Elevate Your Brand Aesthetics Your website's design is a reflection of your brand's identity and values.", date: "may 2022", category: "web"},
+    {icon: "thunder", title: "Digital Marketing", description: "Drive Your Business Forward In the vast digital landscape, standing out from the competition is crucial.", date: "may 2022", category: "web"},
+];
+
 export const init = () => {
     // home page variables
     const whyUsReasonElem = document.getElementById("why-us-reason");
     const servicesBoxElem = document.getElementById("services-box");
+    const worksBoxElem = document.getElementById("works-box");
 
     // create whyUsReason template in wrapper
     const whyUsReasonWrapper = whyUsReasonData.map(data => {
@@ -38,6 +48,13 @@ export const init = () => {
         )
     });
 
+    const worksBoxWrapper = worksBoxData.map(data => {
+        return (
+            OurWorksBox({...data})
+        )
+    })
+
     whyUsReasonElem.insertAdjacentHTML("beforeend", whyUsReasonWrapper.join(""));
     servicesBoxElem.insertAdjacentHTML("beforeend", servicesBoxWrapper.join(""));
+    worksBoxElem.insertAdjacentHTML("beforeend", worksBoxWrapper.join(""));
 };

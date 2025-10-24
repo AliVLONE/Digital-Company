@@ -18,7 +18,7 @@ export default function ServiceBox({icon, title, description}) {
     
     <div class="space-y-6">
         <h3>${title}</h3>
-        <p class="sub-text">${description}</p>
+        <p class="sub-text min-h-24">${description}</p>
        
         <div class="px-5 py-3.5 max-w-max mx-auto flex flex-row justify-center items-center gap-2 bg-black/20 dark:bg-grey-10 border border-transparent dark:border-grey-15 rounded-full text-sm">
             Learn More
