@@ -1,11 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>digital-company</title>
-    <link rel="stylesheet" href="/src/style.css" />
-  </head>
-  <body></body>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <!-- title -->
+    <title>Digital Company</title>
+
+    <!-- scripts -->
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        document.documentElement.classList.toggle("dark",
+            localStorage.theme === "dark" || (!localStorage.theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        )
+    </script>
+</head>
+<body data-page="homePage">
+<header id="header"></header>
+
+<main id="main" class="space-y-20 md:space-y-25 2xl:space-y-30 3xl:space-y-37">
+    <!-- hero-section -->
+    <section id="hero-section" class="flex flex-col-reverse items-center lg:flex-row lg:container">
+        <!-- left hero-section -->
+        <div id="left-hero" class="relative overflow-hidden w-full px-4 pb-9 lg:basis-1/2">
+            <img class="opacity-5 right-0 left-0 absolute -z-10 lg:bottom-0 lg:hidden" src="/src/assets/img/home/Vector.webp" alt="vector hero section">
+
+            <div class="container space-y-12 pt-18 lg:**:text-start">
+                <!-- left hero-section title -->
+                <div class="space-y-3">
+                    <h1 class="text-center">
+                        Digital Solutions<br class="lg:hidden"/>
+                        <span class="text-grey-40">
+                        That Drive Success
+                    </span>
+                    </h1>
+                    <p class="sub-text text-center">
+                        At DigitX, we believe in the transformative power of digital solutions. Our team of experts is dedicated to helping businesses like yours thrive in the fast-paced digital landscape. From captivating web design to data-driven marketing strategies, we are committed to delivering results that exceed expectations.
+                    </p>
+                </div>
+
+                <!-- left hero-section action -->
+                <div class="text-center space-y-6 ">
+                    <p class="text-sm lg:text-base xl:text-lg 3xl:text-xl">
+                        Unlock Your Digital Potential Today
+                    </p>
+                    <!-- left hero-section action-button -->
+                    <div class="flex gap-2 flex-col xs:flex-row justify-center lg:justify-start">
+                        <a class="primary-btn" href="/">Get Started</a>
+                        <a class="secondary-btn" href="/">Free Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- right hero-section -->
+        <div class="px-4 lg:basis-1/2">
+            <div class="mx-auto max-w-[60%] sm:max-w-80 2xl:max-119 3xl:max-w-150">
+                <img class="w-full" src="/src/assets/img/home/Image.webp" alt="hero section image Logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- why-us section -->
+    <section id="why-us" class="px-4">
+        <!-- why-us header -->
+        <div class="container">
+            <div class="space-y-2 text-center">
+                <h2>
+                    Reasons to Choose DigitX for
+                    <span class="text-grey-40">Your Digital Journey</span>
+                </h2>
+                <p class="sub-text">
+                    Partnering with DigitX offers a multitude of advantages. Experience increased brand visibility, improved customer engagement, and higher ROI. Our tailored solutions are designed to meet your unique business needs, ensuring lasting success.
+                </p>
+            </div>
+
+            <!-- why-us reason components -->
+            <div id="why-us-reason" class="mt-13 grid gap-20 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:gap-25"></div>
+        </div>
+    </section>
+
+    <section id="services" class="px-4">
+        <div class="container">
+
+            <!-- services section -->
+            <div class="space-y-2 text-center">
+                <h2>
+                    <span class="text-grey-40">Our</span>
+                    Services
+                </h2>
+                <p class="sub-text">
+                    Our comprehensive range of services includes web design, mobile app development, SEO, social media marketing, and more. Whether you're a startup or an established enterprise, our experts will craft solutions that drive results.
+                </p>
+            </div>
+
+            <div id="services-box" class="mt-13 grid gap-20 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:gap-25"></div>
+        </div>
+    </section>
+
+    <section id="works" class="px-4">
+        <div class="container">
+
+            <!-- works section -->
+            <div class="space-y-2 text-center">
+                <h2>
+                    <span class="text-grey-40">Our</span>
+                    Works
+                </h2>
+                <p class="sub-text">
+                    Witness the brilliance of our previous projects. Our portfolio showcases the successful collaborations we've had with diverse clients across various industries. Let our work speak for itself.
+                </p>
+            </div>
+
+            <div id="works-box" class="mt-13 grid gap-20 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:gap-25"></div>
+        </div>
+    </section>
+</main>
+
+</body>
 </html>

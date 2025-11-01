@@ -1,0 +1,108 @@
+@import "tailwindcss";
+@import "./font-face.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@utility container {
+    @apply mx-auto;
+}
+
+@utility mobile-nav {
+    @apply w-55 gap-4 fixed flex-col -left-56 h-screen top-0 bg-header-bg pl-4 pt-10 transition-all;
+}
+
+@theme {
+    /* font */
+    --font-sora: "Sora", sans-serif;
+
+    /* <=== break-points ===> */
+    --breakpoint-xs: 24.375rem;
+    --breakpoint-sm: 36rem;
+    --breakpoint-2xl: 90rem;
+    --breakpoint-3xl: 99.75rem;
+
+    /* <=== colors ===> */
+    /* main colors */
+    --color-grey-10: var(--color-neutral-200);
+    --color-grey-12: var(--color-neutral-300);
+    --color-grey-30: #4D4D4D;
+    --color-grey-40: var(--color-neutral-600);
+    --color-grey-50: var(--color-neutral-500);
+
+    /* bg-colors */
+    --color-bg-primary: var(--color-neutral-100);
+    --color-header-bg: var(--color-neutral-50);
+
+    /* text-colors */
+    --color-txt-primary: var(--color-neutral-900);
+
+    /* logo-colors */
+    --color-logo-fill: var(--color-neutral-400);
+    --color-logo-stroke: var(--color-neutral-900);
+}
+
+.dark {
+    /* main-colors */
+    --color-grey-10: var(--color-neutral-800);
+    --color-grey-12: var(--color-zinc-700);
+    --color-grey-30: #4D4D4D;
+    --color-grey-40: #666666;
+    --color-grey-50: #808080;
+
+    /* bg-colors */
+    --color-bg-primary: var(--color-neutral-900);
+    --color-header-bg: var(--color-neutral-800);
+
+    /* text-colors */
+    --color-txt-primary: var(--color-neutral-100);
+
+    /* logo-colors */
+    --color-logo-fill: var(--color-neutral-500);
+    --color-logo-stroke: var(--color-neutral-100);
+}
+
+@layer base {
+    body {
+        @apply font-normal font-sora bg-bg-primary text-txt-primary mb-20;
+    }
+    a {
+        @apply inline-block hover:opacity-70 active:opacity-70 transition-all;
+    }
+    header {
+        @apply z-10 fixed top-0 left-0 right-0 border-b border-b-grey-12 bg-bg-primary/20 backdrop-blur-xs px-4 pt-10 pb-3.5 md:py-5 2xl:px-6;
+    }
+    main {
+        @apply pt-34;
+    }
+    h1, h2, h3 {
+        @apply font-medium;
+    }
+    h1 {
+        @apply leading-[130%] text-3xl md:text-4xl 2xl:text-5xl 3xl:text-[58px];
+    }
+    h2 {
+        @apply leading-[150%] text-2xl md:text-3xl 2xl:text-4xl;
+    }
+}
+
+@layer components {
+    .sub-text {
+        @apply text-grey-50 text-sm md:text-base 3xl:text-lg;
+    }
+    .primary-btn, .secondary-btn {
+        @apply rounded-full px-4 py-2.5 text-sm;
+    }
+    .primary-btn {
+        @apply text-bg-primary bg-txt-primary;
+    }
+    .secondary-btn {
+        @apply bg-black/70 dark:bg-grey-10 text-white border
+        border-black/5 dark:border-zinc-700;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #left-hero {
+        overflow: unset !important;
+    }
+}
